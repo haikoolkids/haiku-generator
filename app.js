@@ -19,7 +19,7 @@ window.addEventListener('load', async () => {
 async function fetchAndDisplayHaikus() {
     listEl.textContent = '';
     const haikus = await getHaikus();
-
+    console.log('haikus', haikus);
     for (let haiku of haikus) {
         const haikuEl = renderHaiku(haiku);
         listEl.append(haikuEl);
