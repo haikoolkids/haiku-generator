@@ -34,16 +34,43 @@
     <body>
         <header class="page-header">
             <img class="logo" src="/assets/html_css_js.png" alt="logo" />
-            <p class="haiku-landing">Haiku Landing Page</p>
+            <p class="haiku-create">Haiku Create Page</p>
             <nav>
-                <a href="./create/">Create</a>
+                <a href="/">Home</a>
                 <a href="/">About Us</a>
                 <a href="./auth/">Sign out</a>
             </nav>
         </header>
 
         <main>
-            <ul class="list"></ul>
+            <form id="create-form">
+                <label class="labels">
+                    Line 1
+                    <textarea class="text-area"
+                        name="line-1"
+                        placeholder="5 syllables"
+                    ></textarea>
+                <label class="labels">
+                    Line 2
+                    <textarea class="text-area"
+                        name="line-2"
+                        placeholder="7 syllables"
+                    ></textarea>
+                <label class="labels">
+                    Line 3
+                    <textarea class="text-area"
+                        name="line-3"
+                        placeholder="5 syllables"
+                    ></textarea>
+                </label>
+                <select id="theme-selector">
+                    <option value="winter">Winter</option>
+                    <option value="spring"  >Spring</option>
+                    <option value="summer">Summer</option>
+                    <option value="fall">Fall</option>
+                </select>
+                <button id="submit-button">Submit</button>
+            </form>
         </main>
     </body>
 </html>
