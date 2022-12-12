@@ -8,6 +8,8 @@ const haikuForm = document.getElementById('create-form');
 // const lineThree = haikuForm.querySelector('[name = line-3]');
 const theme = document.getElementById('theme-selector');
 const displayContainer = document.querySelector('.display-container');
+const test = document.querySelector('#test');
+const inputBox = document.querySelector('textarea');
 
 let error = null;
 let haiku = [];
@@ -26,5 +28,13 @@ haikuForm.addEventListener('submit', async (e) => {
     };
 
     const response = await insertHaiku(haikuObj);
-    console.log(response);
+    test.textContent = formData.get('line-1');
+
+    return checkError(response);
 });
+
+inputBox.onkeyup = function () {
+    document.getElementById('test').innerHTML = inputBox.value;
+    let val = document.getElementById('input').value;
+    document.getElementById('test').value = val;
+};
