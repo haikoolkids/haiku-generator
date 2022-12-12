@@ -44,3 +44,8 @@ export async function getHaikus() {
     const response = await client.from('haikus').select('*');
     return checkError(response);
 }
+
+export async function insertHaiku(haiku) {
+    const response = await client.from('haikus').insert(haiku);
+    return checkError(response);
+}
