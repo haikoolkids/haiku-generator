@@ -7,7 +7,8 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 export function getUser() {
     return client.auth.user();
-    console.log('client', client);
+    // eslint-disable-next-line no-unreachable
+    // console.log('client', client);
 }
 
 export async function signUpUser(email, password) {
@@ -33,8 +34,13 @@ function checkError(response) {
     // eslint-disable-next-line no-console
     return response.error ? console.error(response.error) : response.data;
 }
-export async function getAll() {
-    const response = await client.from('one_liners').select();
-    console.log('response.data', response.data);
+// export async function getAll() {
+//     const response = await client.from('one_liners').select();
+//     console.log('response.data', response.data);
+// }
+// getAll();
+
+export async function getHaikus() {
+    const response = await client.from('haikus').select('*');
+    return checkError(response);
 }
-getAll();
