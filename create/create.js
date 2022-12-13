@@ -1,5 +1,5 @@
 import '../auth/user.js';
-import { getUser, insertHaiku } from '../fetch-utils.js';
+import { getUser, insertHaiku, checkError, getRandomLine } from '../fetch-utils.js';
 
 const errorDisplay = document.getElementById('error-display');
 const haikuForm = document.getElementById('create-form');
@@ -11,6 +11,8 @@ const displayContainer = document.querySelector('.display-container');
 const displayOne = document.querySelector('#display-one');
 const displayTwo = document.querySelector('#display-two');
 const displayThree = document.querySelector('#display-three');
+const fiveBtn = document.querySelector('.random-five-button');
+const sevenBtn = document.getElementById('#random-seven-button');
 // const inputBox = document.querySelector('textarea');
 
 let error = null;
@@ -53,3 +55,10 @@ lineThree.onkeyup = function () {
     let val = document.getElementById('input').value;
     document.getElementById('display-three').value = val;
 };
+
+fiveBtn.addEventListener('click', async () => {
+    displayOne.textContent = '';
+
+    const response = await getRandomLine();
+    displayOne.textContent = response[0].five;
+});

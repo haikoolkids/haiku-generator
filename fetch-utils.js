@@ -30,15 +30,15 @@ export async function signOutUser() {
 }
 
 /* Data functions */
-function checkError(response) {
+export function checkError(response) {
     // eslint-disable-next-line no-console
     return response.error ? console.error(response.error) : response.data;
 }
-// export async function getAll() {
-//     const response = await client.from('one_liners').select();
-//     console.log('response.data', response.data);
-// }
-// getAll();
+export async function getAllOneLiners() {
+    const response = await client.from('one_liners').select();
+}
+
+getAllOneLiners();
 
 export async function getHaikus() {
     const response = await client.from('haikus').select('*');
@@ -47,5 +47,11 @@ export async function getHaikus() {
 
 export async function insertHaiku(haiku) {
     const response = await client.from('haikus').insert(haiku);
+    return checkError(response);
+}
+
+export async function getRandomLine() {
+    let random = Math.ceil(Math.random() * 3);
+    const response = await client.from('one_liners').select('*').match({ id: random });
     return checkError(response);
 }
