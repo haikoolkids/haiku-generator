@@ -37,7 +37,14 @@ haikuForm.addEventListener('submit', async (e) => {
     displayTwo.textContent = formData.get('line-2');
     displayThree.textContent = formData.get('line-3');
 
-    return checkError(response);
+    error = response.error;
+
+    if (error) {
+        errorDisplay.textContent = error.message;
+    } else {
+        location.assign('/');
+    }
+    // return checkError(response);
 });
 
 // eslint-disable-next-line space-before-function-paren
