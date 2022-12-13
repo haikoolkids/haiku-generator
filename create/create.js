@@ -3,13 +3,15 @@ import { getUser, insertHaiku } from '../fetch-utils.js';
 
 const errorDisplay = document.getElementById('error-display');
 const haikuForm = document.getElementById('create-form');
-// const lineOne = haikuForm.querySelector('[name = line-1]');
-// const lineTwo = haikuForm.querySelector('[name = line-2]');
-// const lineThree = haikuForm.querySelector('[name = line-3]');
+const lineOne = haikuForm.querySelector('[name = line-1]');
+const lineTwo = haikuForm.querySelector('[name = line-2]');
+const lineThree = haikuForm.querySelector('[name = line-3]');
 const theme = document.getElementById('theme-selector');
 const displayContainer = document.querySelector('.display-container');
-const test = document.querySelector('#test');
-const inputBox = document.querySelector('textarea');
+const displayOne = document.querySelector('#display-one');
+const displayTwo = document.querySelector('#display-two');
+const displayThree = document.querySelector('#display-three');
+// const inputBox = document.querySelector('textarea');
 
 let error = null;
 let haiku = [];
@@ -28,13 +30,26 @@ haikuForm.addEventListener('submit', async (e) => {
     };
 
     const response = await insertHaiku(haikuObj);
-    test.textContent = formData.get('line-1');
+    displayOne.textContent = formData.get('line-1');
+    displayTwo.textContent = formData.get('line-2');
+    displayThree.textContent = formData.get('line-3');
 
     return checkError(response);
 });
 
-inputBox.onkeyup = function () {
-    document.getElementById('test').innerHTML = inputBox.value;
+// eslint-disable-next-line space-before-function-paren
+lineOne.onkeyup = function () {
+    document.getElementById('display-one').innerHTML = lineOne.value;
+    let val = document.getElementById('line-one').value;
+    document.getElementById('display-one').value = val;
+};
+lineTwo.onkeyup = function () {
+    document.getElementById('display-two').innerHTML = lineTwo.value;
+    let val = document.getElementById('line-two').value;
+    document.getElementById('display-two').value = val;
+};
+lineThree.onkeyup = function () {
+    document.getElementById('display-three').innerHTML = lineThree.value;
     let val = document.getElementById('input').value;
-    document.getElementById('test').value = val;
+    document.getElementById('display-three').value = val;
 };
