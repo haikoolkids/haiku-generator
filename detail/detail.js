@@ -9,7 +9,7 @@ const listEl = document.querySelector('.list');
 async function fetchAndDisplayHaiku() {
     listEl.textContent = '';
     const haiku = await getHaikuById(id);
-    console.log('haiku', haiku);
+    // console.log('haiku', haiku);
 
     const singleHaiku = renderHaiku(haiku);
     listEl.append(singleHaiku);
