@@ -57,24 +57,25 @@ lineThree.onkeyup = function () {
     displayThree.value = val;
 };
 
-fiveBtn.addEventListener('click', async () => {
+fiveBtn.addEventListener('click', async (e) => {
     // displayOne.textContent = '';
-
+    e.preventDefault();
     const response = await getRandomLine();
-    console.log(response);
+    // console.log(response);
+
     displayOne.textContent = response[0].five;
 });
 
-sevenBtn.addEventListener('click', async () => {
+sevenBtn.addEventListener('click', async (e) => {
     displayTwo.textContent = '';
-
+    e.preventDefault();
     const response = await getRandomLine();
     displayTwo.textContent = response[0].seven;
 });
 
-fiveBtn2.addEventListener('click', async () => {
+fiveBtn2.addEventListener('click', async (e) => {
     displayThree.textContent = '';
-
+    e.preventDefault();
     const response = await getRandomLine();
     displayThree.textContent = response[0].five;
 });
