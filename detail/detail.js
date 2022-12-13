@@ -11,8 +11,8 @@ async function fetchAndDisplayHaiku() {
     const haiku = await getHaikuById(id);
     console.log('haiku', haiku);
 
-    renderHaiku(haiku);
-    listEl.append(haiku);
+    const singleHaiku = renderHaiku(haiku);
+    listEl.append(singleHaiku);
 }
 
 window.addEventListener('load', async () => {
