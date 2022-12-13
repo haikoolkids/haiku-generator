@@ -3,15 +3,18 @@ import { renderHaiku } from '../render-utils.js';
 
 const haikuContainer = document.getElementById('haiku-container');
 
+const params = new URLSearchParams(window.location.search);
+const id = params.get('id');
+const listEl = document.querySelector('.list');
 async function fetchAndDisplayHaiku() {
-    haikuContainer.textContent = '';
-    const haiku = await getHaikuById();
+    listEl.textContent = '';
+    const haiku = await getHaikuById(id);
     console.log('haiku', haiku);
 
     renderHaiku(haiku);
-    haikuContainer.append(haiku);
+    listEl.append(haiku);
 }
 
 window.addEventListener('load', async () => {
-    fetchAndDisplayHaiku();
+    await fetchAndDisplayHaiku();
 });

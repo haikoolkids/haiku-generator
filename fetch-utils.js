@@ -57,7 +57,7 @@ export async function getRandomLine() {
 }
 
 export async function getHaikuById(id) {
-    const response = await client.from('haikus').select('*').match({ id });
-
+    const response = await client.from('haikus').select('poem').match({ id }).single();
+    console.log('response', response);
     return checkError(response);
 }

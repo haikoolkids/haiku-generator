@@ -6,12 +6,12 @@ export function renderHaiku(haiku) {
     // const img = document.createElement('img');
     const a = document.createElement('a');
 
-    h3.textContent = haiku.title;
+    // h3.textContent = haiku.title;
     p.textContent = haiku.poem[0];
     p2.textContent = haiku.poem[1];
     p3.textContent = haiku.poem[2];
     // img.src = haiku.theme;
-    a.append(h3, p, p2, p3);
+    a.append(p, p2, p3);
     //add img//
     return a;
 }
