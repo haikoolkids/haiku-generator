@@ -3,7 +3,7 @@ export function renderHaiku(haiku) {
     const p = document.createElement('p');
     const p2 = document.createElement('p');
     const p3 = document.createElement('p');
-    const img = document.createElement('img');
+    // const img = document.createElement('img');
     const a = document.createElement('a');
 
     h3.textContent = haiku.title;
