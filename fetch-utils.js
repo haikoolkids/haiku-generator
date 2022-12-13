@@ -61,23 +61,3 @@ export async function getHaikuById(id) {
     // console.log('response', response);
     return checkError(response);
 }
-
-export async function incrementLikes(id) {
-    const haiku = await getHaikuById(id);
-    const response = await client
-        .from('haikus')
-        .update({ rating: haiku.rating + 1 })
-        .match({ id });
-
-    return checkError(response);
-}
-
-export async function decrementLikes(id) {
-    const haiku = await getHaikuById(id);
-    const response = await client
-        .from('haikus')
-        .update({ rating: haiku.rating - 1 })
-        .match({ id });
-
-    return checkError(response);
-}
