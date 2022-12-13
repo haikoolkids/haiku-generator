@@ -12,7 +12,8 @@ const displayOne = document.querySelector('#display-one');
 const displayTwo = document.querySelector('#display-two');
 const displayThree = document.querySelector('#display-three');
 const fiveBtn = document.querySelector('.random-five-button');
-const sevenBtn = document.getElementById('#random-seven-button');
+const sevenBtn = document.querySelector('.random-seven-button');
+const fiveBtn2 = document.querySelector('.random-five-button2');
 // const inputBox = document.querySelector('textarea');
 
 let error = null;
@@ -41,19 +42,19 @@ haikuForm.addEventListener('submit', async (e) => {
 
 // eslint-disable-next-line space-before-function-paren
 lineOne.onkeyup = function () {
-    document.getElementById('display-one').innerHTML = lineOne.value;
-    let val = document.getElementById('line-one').value;
-    document.getElementById('display-one').value = val;
+    displayOne.innerHTML = lineOne.value;
+    let val = lineOne.value;
+    displayOne.value = val;
 };
 lineTwo.onkeyup = function () {
-    document.getElementById('display-two').innerHTML = lineTwo.value;
-    let val = document.getElementById('line-two').value;
-    document.getElementById('display-two').value = val;
+    displayTwo.innerHTML = lineTwo.value;
+    let val = lineTwo.value;
+    displayTwo.value = val;
 };
 lineThree.onkeyup = function () {
-    document.getElementById('display-three').innerHTML = lineThree.value;
-    let val = document.getElementById('input').value;
-    document.getElementById('display-three').value = val;
+    displayThree.innerHTML = lineThree.value;
+    let val = lineThree.value;
+    displayThree.value = val;
 };
 
 fiveBtn.addEventListener('click', async () => {
@@ -61,4 +62,19 @@ fiveBtn.addEventListener('click', async () => {
 
     const response = await getRandomLine();
     displayOne.textContent = response[0].five;
+});
+
+sevenBtn.addEventListener('click', async () => {
+    displayTwo.textContent = '';
+
+    const response = await getRandomLine();
+    console.log(response);
+    displayTwo.textContent = response[0].seven;
+});
+
+fiveBtn2.addEventListener('click', async () => {
+    displayThree.textContent = '';
+
+    const response = await getRandomLine();
+    displayThree.textContent = response[0].five;
 });
