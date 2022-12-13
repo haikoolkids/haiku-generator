@@ -15,7 +15,7 @@ const fiveBtn = document.querySelector('.random-five-button');
 const sevenBtn = document.querySelector('.random-seven-button');
 const fiveBtn2 = document.querySelector('.random-five-button2');
 // const inputBox = document.querySelector('textarea');
-
+let testObj = {};
 let error = null;
 let haiku = [];
 
@@ -65,18 +65,18 @@ lineThree.onkeyup = function () {
 };
 
 fiveBtn.addEventListener('click', async (e) => {
-    // displayOne.textContent = '';
+    displayOne.textContent = '';
     e.preventDefault();
     const response = await getRandomLine();
-    // console.log(response);
-
     displayOne.textContent = response[0].five;
+    lineOne.value = response[0].five;
 });
 
 sevenBtn.addEventListener('click', async (e) => {
     displayTwo.textContent = '';
     e.preventDefault();
     const response = await getRandomLine();
+    lineTwo.value = response[0].seven;
     displayTwo.textContent = response[0].seven;
 });
 
@@ -84,5 +84,6 @@ fiveBtn2.addEventListener('click', async (e) => {
     displayThree.textContent = '';
     e.preventDefault();
     const response = await getRandomLine();
+    lineThree.value = response[0].five;
     displayThree.textContent = response[0].five;
 });
