@@ -20,7 +20,6 @@ let error = null;
 let haiku = [];
 
 const user = getUser();
-console.log(user);
 
 haikuForm.addEventListener('submit', async (e) => {
     e.preventDefault();

@@ -5,7 +5,7 @@ export function renderHaiku(haiku) {
     const p3 = document.createElement('p');
     // const img = document.createElement('img');
     const a = document.createElement('a');
-    console.log(haiku.poem); // h3.textContent = haiku.title;
+    // console.log(haiku.poem); // h3.textContent = haiku.title;
     p.textContent = haiku.poem[0];
     p2.textContent = haiku.poem[1];
     p3.textContent = haiku.poem[2];
