@@ -58,9 +58,10 @@ lineThree.onkeyup = function () {
 };
 
 fiveBtn.addEventListener('click', async () => {
-    displayOne.textContent = '';
+    // displayOne.textContent = '';
 
     const response = await getRandomLine();
+    console.log(response);
     displayOne.textContent = response[0].five;
 });
 
@@ -68,7 +69,6 @@ sevenBtn.addEventListener('click', async () => {
     displayTwo.textContent = '';
 
     const response = await getRandomLine();
-    console.log(response);
     displayTwo.textContent = response[0].seven;
 });
 
