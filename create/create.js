@@ -8,13 +8,14 @@ const lineOne = haikuForm.querySelector('[name = line-1]');
 const lineTwo = haikuForm.querySelector('[name = line-2]');
 const lineThree = haikuForm.querySelector('[name = line-3]');
 const theme = document.getElementById('theme-selector');
-const displayContainer = document.querySelector('.display-container');
 const displayOne = document.querySelector('#display-one');
 const displayTwo = document.querySelector('#display-two');
 const displayThree = document.querySelector('#display-three');
 const fiveBtn = document.querySelector('.random-five-button');
 const sevenBtn = document.querySelector('.random-seven-button');
 const fiveBtn2 = document.querySelector('.random-five-button2');
+const previewImg = document.getElementById('preview-image');
+
 // const inputBox = document.querySelector('textarea');
 let testObj = {};
 let error = null;
@@ -87,4 +88,10 @@ fiveBtn2.addEventListener('click', async (e) => {
     const response = await getRandomLine();
     lineThree.value = response[0].five;
     displayThree.textContent = response[0].five;
+});
+
+theme.addEventListener('change', (e) => {
+    const value = e.target.value;
+
+    previewImg.src = `../assets/${value}.png`;
 });
