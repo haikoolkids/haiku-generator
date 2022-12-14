@@ -33,9 +33,9 @@ export function checkError(response) {
     // eslint-disable-next-line no-console
     return response.error ? console.error(response.error) : response.data;
 }
-export async function getAllOneLiners() {
-    const response = await client.from('one_liners').select();
-}
+// export async function getAllOneLiners() {
+//     const response = await client.from('one_liners').select();
+// }
 
 export async function getHaikus() {
     const response = await client.from('haikus').select('*');
