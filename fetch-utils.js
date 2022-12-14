@@ -57,14 +57,14 @@ export async function getRandomLine() {
 }
 
 export async function getHaikuById(id) {
-    const response = await client.from('haikus').select('poem').match({ id }).single();
-    // console.log('response', response);
+    const response = await client.from('haikus').select('*').match({ id }).single();
+    console.log('response', response);
     return checkError(response);
 }
 
 export async function incrementLikes(id) {
     const haiku = await getHaikuById(id);
-
+    console.log('haiku', haiku);
     const response = await client
         .from('haikus')
         .update({ rating: haiku.rating + 1 })

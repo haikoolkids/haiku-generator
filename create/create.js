@@ -1,3 +1,4 @@
+/* eslint-disable space-before-function-paren */
 import '../auth/user.js';
 import { getUser, insertHaiku, checkError, getRandomLine } from '../fetch-utils.js';
 
@@ -52,6 +53,7 @@ lineOne.onkeyup = function () {
     let val = lineOne.value;
     displayOne.value = val;
 };
+// eslint-disable-next-line space-before-function-paren
 lineTwo.onkeyup = function () {
     displayTwo.innerHTML = lineTwo.value;
     let val = lineTwo.value;
