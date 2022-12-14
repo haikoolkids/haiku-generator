@@ -1,0 +1,45 @@
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+div {
+    border: black solid 3px;
+    text-align: center;
+    padding: 5px;
+}
+
+div.winter {
+    background-image: url('../assets/winter.png');
+    justify-content: center;
+    width: 220px;
+    height: 220px;
+}
+
+div.spring {
+    background-image: url('../assets/spring.png');
+    width: 220px;
+    height: 220px;
+}
+
+div.summer {
+    background-image: url('../assets/summer.png');
+    width: 220px;
+    height: 220px;
+}
+
+div.fall {
+    background-image: url('../assets/fall.png');
+    width: 220px;
+    height: 220px;
+}
+
+.poemlines {
+    background-color: bisque;
+    opacity: 50%;
+}
+
+.ratings {
+    background-color: beige;
+}
