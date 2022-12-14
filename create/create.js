@@ -44,7 +44,7 @@ haikuForm.addEventListener('submit', async (e) => {
     } else {
         location.assign('/');
     }
-    // return checkError(response);
+    return checkError(response);
 });
 
 // eslint-disable-next-line space-before-function-paren
