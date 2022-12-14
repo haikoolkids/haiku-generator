@@ -26,14 +26,20 @@ const user = getUser();
 
 haikuForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-
+    //set textcontent to ''
     const formData = new FormData(haikuForm);
 
     const line1 = formData.get('line-1');
     const line2 = formData.get('line-2');
     const line3 = formData.get('line-3');
-    const result = checkHaiku(line1, line2, line3);
-    console.log('result', result);
+
+    if (checkHaiku(line1, line2, line3) === false) {
+        haikuForm.reset();
+        return alert('no good');
+    }
+
+    //stop code and redirect?
+
     // console.log(formData.data);
     const haikuObj = {
         poem: [formData.get('line-1'), formData.get('line-2'), formData.get('line-3')],

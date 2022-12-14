@@ -32,7 +32,8 @@ export function checkHaiku(a, b, c) {
         return true;
     }
 
-    alert('Please enter a haiku of 5/7/5 syllables!');
+    // return { result: false, syllables: result };
+    return false;
 }
 export function arrayCompare(a1, a2) {
     return (
