@@ -35,7 +35,7 @@ haikuForm.addEventListener('submit', async (e) => {
 
     if (checkHaiku(line1, line2, line3) === false) {
         haikuForm.reset();
-        return alert('no good');
+        return alert('Haikus should have 5/7/5 syllables!');
     }
 
     //stop code and redirect?
