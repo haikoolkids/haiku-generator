@@ -23,7 +23,7 @@ async function fetchAndDisplayHaikus() {
     for (let haiku of haikus) {
         const haikuEl = renderHaiku(haiku);
         listEl.append(haikuEl);
-        listEl.addEventListener('click', () => {
+        haikuEl.addEventListener('click', () => {
             location.replace(`./detail/?id=${haiku.id}`);
         });
     }
