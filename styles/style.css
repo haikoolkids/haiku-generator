@@ -1,11 +1,19 @@
+main {
+    background: linear-gradient(
+        lightskyblue,
+        rgba(216, 112, 147, 0.634),
+        rgba(0, 128, 0, 0.688),
+        orange
+    );
+}
+
 .list {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 10px;
 }
 
 div {
-    border: black solid 3px;
     text-align: center;
     padding: 5px;
 }
@@ -15,31 +23,45 @@ div.winter {
     justify-content: center;
     width: 220px;
     height: 220px;
+    border: solid lightskyblue 4px;
+    display: flex;
+    flex-direction: column;
 }
 
 div.spring {
     background-image: url('../assets/spring.png');
     width: 220px;
     height: 220px;
+    border: solid palevioletred 4px;
+    display: flex;
+    flex-direction: column;
 }
 
 div.summer {
     background-image: url('../assets/summer.png');
     width: 220px;
     height: 220px;
+    border: solid green 4px;
+    display: flex;
+    flex-direction: column;
 }
 
 div.fall {
     background-image: url('../assets/fall.png');
     width: 220px;
     height: 220px;
+    border: solid orangered 4px;
+    display: flex;
+    flex-direction: column;
 }
 
 .poemlines {
-    background-color: bisque;
-    opacity: 50%;
+    background: rgba(255, 228, 196, 0.5);
+    margin: 5px;
 }
 
 .ratings {
     background-color: beige;
+    align-self: flex-end;
+    flex-wrap: nowrap;
 }
