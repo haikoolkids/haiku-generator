@@ -18,15 +18,14 @@ const fiveBtn2 = document.querySelector('.random-five-button2');
 const previewImg = document.getElementById('preview-image');
 
 // const inputBox = document.querySelector('textarea');
-let testObj = {};
+
 let error = null;
-let haiku = [];
 
 const user = getUser();
 
 haikuForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    //set textcontent to ''
+
     const formData = new FormData(haikuForm);
 
     const line1 = formData.get('line-1');
@@ -35,18 +34,16 @@ haikuForm.addEventListener('submit', async (e) => {
 
     if (checkHaiku(line1, line2, line3) === false) {
         haikuForm.reset();
+        //clear out input fields
         return alert('Haikus should have 5/7/5 syllables!');
+        //this return statement stops the redirect below
     }
 
-    //stop code and redirect?
-
-    // console.log(formData.data);
     const haikuObj = {
         poem: [formData.get('line-1'), formData.get('line-2'), formData.get('line-3')],
         themes: formData.get('theme-select'),
-        // user_name: user.id,
     };
-    console.log('haikuObj', haikuObj);
+
     const response = await insertHaiku(haikuObj);
     displayOne.textContent = formData.get('line-1');
     displayTwo.textContent = formData.get('line-2');
