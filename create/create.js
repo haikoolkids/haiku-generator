@@ -30,9 +30,10 @@ haikuForm.addEventListener('submit', async (e) => {
     // console.log(formData.data);
     const haikuObj = {
         poem: [formData.get('line-1'), formData.get('line-2'), formData.get('line-3')],
+        themes: formData.get('theme-select'),
         // user_name: user.id,
     };
-
+    console.log('haikuObj', haikuObj);
     const response = await insertHaiku(haikuObj);
     displayOne.textContent = formData.get('line-1');
     displayTwo.textContent = formData.get('line-2');
