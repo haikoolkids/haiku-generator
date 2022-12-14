@@ -1,0 +1,49 @@
+#haiku-container {
+    display: flex;
+    justify-content: center;
+    border: solid black 5px;
+    background: linear-gradient(pink, white);
+}
+
+.haiku-likes {
+    display: flex;
+    justify-content: center;
+}
+div.winter {
+    background-image: url('../assets/winter.png');
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+}
+
+div.spring {
+    background-image: url('../assets/spring.png');
+    width: 400px;
+    height: 400px;
+}
+
+div.summer {
+    background-image: url('../assets/summer.png');
+    width: 400px;
+    height: 400px;
+    justify-content: center;
+}
+
+div.fall {
+    background-image: url('../assets/fall.png');
+    width: 400px;
+    height: 400px;
+}
+
+.poemlines {
+    display: flex;
+    background-color: bisque;
+    opacity: 50%;
+    text-align: center;
+
+    justify-content: center;
+}
+
+.ratings {
+    background-color: beige;
+}

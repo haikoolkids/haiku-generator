@@ -33,7 +33,7 @@ function renderLikes({ rating, haiku, id }) {
     downButton.textContent = 'downvote';
     upButton.textContent = 'upvote';
 
-    p.textContent = `This Haiku has ${rating} stars`;
+    // p.textContent = `This Haiku has ${rating} stars`;
 
     downButton.addEventListener('click', async () => {
         await decrementLikes(id);
