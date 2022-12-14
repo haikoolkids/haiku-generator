@@ -11,8 +11,8 @@ export function syllables(word) {
 }
 
 export function checkLine(sentence) {
-    var count = 0;
-    var words = sentence.split(' ');
+    let count = 0;
+    let words = sentence.split(' ');
 
     words.map(function (val, key) {
         count += syllables(val);
