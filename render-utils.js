@@ -3,20 +3,25 @@ export function renderHaiku(haiku) {
     const p = document.createElement('p');
     const p2 = document.createElement('p');
     const p3 = document.createElement('p');
-    const section = document.createElement('section');
+    const cheers = document.createElement('p');
     const a = document.createElement('a');
+    const cheersDiv = document.createElement('div');
+    const pDiv = document.createElement('div');
 
     p.textContent = haiku.poem[0];
     p2.textContent = haiku.poem[1];
     p3.textContent = haiku.poem[2];
     div.classList.add(`${haiku.themes}`);
-    section.textContent = `${haiku.rating} cheers 🍻`;
-    section.classList.add('ratings');
+    cheers.textContent = `${haiku.rating} cheers 🍻`;
+    cheers.classList.add('ratings');
     p.classList.add('poemlines');
     p2.classList.add('poemlines');
     p3.classList.add('poemlines');
 
-    div.append(p, p2, p3, section);
+    pDiv.append(p, p2, p3);
+    cheersDiv.append(cheers);
+
+    div.append(pDiv, cheersDiv);
     a.append(div);
     return a;
 }

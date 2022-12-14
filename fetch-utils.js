@@ -48,7 +48,7 @@ export async function insertHaiku(haiku) {
 }
 
 export async function getRandomLine() {
-    let random = Math.ceil(Math.random() * 3);
+    let random = Math.ceil(Math.random() * 43);
     const response = await client.from('one_liners').select('*').match({ id: random });
     return checkError(response);
 }
