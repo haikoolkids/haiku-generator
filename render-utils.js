@@ -10,7 +10,7 @@ export function renderHaiku(haiku) {
     p2.textContent = haiku.poem[1];
     p3.textContent = haiku.poem[2];
     div.classList.add(`${haiku.themes}`);
-    section.textContent = `${haiku.rating} stars`;
+    section.textContent = `${haiku.rating} cheers 🍻`;
     section.classList.add('ratings');
     p.classList.add('poemlines');
     p2.classList.add('poemlines');

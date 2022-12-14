@@ -8,7 +8,6 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 export function getUser() {
     return client.auth.user();
     // eslint-disable-next-line no-unreachable
-    // console.log('client', client);
 }
 
 export async function signUpUser(email, password) {
@@ -34,11 +33,9 @@ export function checkError(response) {
     // eslint-disable-next-line no-console
     return response.error ? console.error(response.error) : response.data;
 }
-export async function getAllOneLiners() {
-    const response = await client.from('one_liners').select();
-}
-
-getAllOneLiners();
+// export async function getAllOneLiners() {
+//     const response = await client.from('one_liners').select();
+// }
 
 export async function getHaikus() {
     const response = await client.from('haikus').select('*');
@@ -58,13 +55,11 @@ export async function getRandomLine() {
 
 export async function getHaikuById(id) {
     const response = await client.from('haikus').select('*').match({ id }).single();
-    console.log('response', response);
     return checkError(response);
 }
 
 export async function incrementLikes(id) {
     const haiku = await getHaikuById(id);
-    console.log('haiku', haiku);
     const response = await client
         .from('haikus')
         .update({ rating: haiku.rating + 1 })
@@ -75,7 +70,6 @@ export async function incrementLikes(id) {
 
 export async function decrementLikes(id) {
     const haiku = await getHaikuById(id);
-
     const response = await client
         .from('haikus')
         .update({ rating: haiku.rating - 1 })
