@@ -1,6 +1,7 @@
 /* eslint-disable space-before-function-paren */
 import '../auth/user.js';
 import { getUser, insertHaiku, checkError, getRandomLine } from '../fetch-utils.js';
+import { checkHaiku } from '../syllables.js';
 
 const errorDisplay = document.getElementById('error-display');
 const haikuForm = document.getElementById('create-form');
@@ -27,6 +28,12 @@ haikuForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const formData = new FormData(haikuForm);
+
+    const line1 = formData.get('line-1');
+    const line2 = formData.get('line-2');
+    const line3 = formData.get('line-3');
+    const result = checkHaiku(line1, line2, line3);
+    console.log('result', result);
     // console.log(formData.data);
     const haikuObj = {
         poem: [formData.get('line-1'), formData.get('line-2'), formData.get('line-3')],
