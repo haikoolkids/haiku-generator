@@ -74,4 +74,5 @@ nav {
     display: flex;
     flex-direction: column;
     margin-left: 50%;
+    min-width: 240px;
 }
