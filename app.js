@@ -19,10 +19,11 @@ window.addEventListener('load', async () => {
 async function fetchAndDisplayHaikus() {
     listEl.textContent = '';
     const haikus = await getHaikus();
-
+    // looping through each object in haikus area
     for (let haiku of haikus) {
         const haikuEl = renderHaiku(haiku);
         listEl.append(haikuEl);
+        // makes each clickable to redirect to the detail page
         haikuEl.addEventListener('click', () => {
             location.replace(`./detail/?id=${haiku.id}`);
         });

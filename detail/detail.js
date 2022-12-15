@@ -8,7 +8,7 @@ const id = params.get('id');
 const listEl = document.querySelector('.list');
 
 let rating = 0;
-
+// grabbing the the haiku and displaying by id
 async function fetchAndDisplayHaiku() {
     listEl.textContent = '';
     const haiku = await getHaikuById(id);
@@ -22,7 +22,7 @@ async function fetchAndDisplayHaiku() {
 window.addEventListener('load', async () => {
     await fetchAndDisplayHaiku();
 });
-
+// makes up and down button clickable to change likes on page
 function renderLikes({ rating, haiku, id }) {
     const p = document.createElement('p');
     const downButton = document.createElement('button');
@@ -32,8 +32,6 @@ function renderLikes({ rating, haiku, id }) {
     haikuLikes.append(p, downButton, upButton);
     downButton.textContent = 'downvote';
     upButton.textContent = 'upvote';
-
-    // p.textContent = `This Haiku has ${rating} stars`;
 
     downButton.addEventListener('click', async () => {
         await decrementLikes(id);

@@ -11,6 +11,7 @@ export function renderHaiku(haiku) {
     p.textContent = haiku.poem[0];
     p2.textContent = haiku.poem[1];
     p3.textContent = haiku.poem[2];
+    // using temp literal to dynamically change theme of haiku
     div.classList.add(`${haiku.themes}`);
     cheers.textContent = `${haiku.rating} cheers 🍻`;
     cheers.classList.add('ratings');
