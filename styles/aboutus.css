@@ -1,8 +1,12 @@
 main {
     display: flex;
+    flex-direction: column;
+}
+
+#profiles {
+    display: flex;
     align-items: stretch;
     justify-content: space-between;
-    width: 95%;
     gap: 50px;
 }
 
@@ -22,7 +26,6 @@ main {
 }
 
 nav {
-    background-color: aqua;
     display: flex;
     flex-direction: column;
 }
